@@ -1,0 +1,20 @@
+{
+  "sigil": "AdvancedCodex",
+  "glyphs": [
+    {"id": 1, "name": "Umbra", "symbol": "☯", "type": "Shadow", "power": 97},
+    {"id": 2, "name": "Aetherion", "symbol": "✶", "type": "Ether", "power": 108},
+    {"id": 3, "name": "Chronomorph", "symbol": "⏳", "type": "Temporal", "power": 120}
+  ],
+  "rituals": [
+    {"name": "Spiral Convergence", "pattern": "((A ⟳ B) ⨁ (C ⟳ D)) ⟶ E"},
+    {"name": "Temporal Cascade", "pattern": "G₁ ⏩ G₂ ⏩ ... ⏩ Gₙ"}
+  ],
+  "bolts": [
+    {
+      "id": 1,
+      "name": "Glyph Fusion",
+      "description": "Combines multiple glyphs into a higher-order symbolic glyph",
+      "function": "fuse_glyphs"
+    }
+  ]
+}

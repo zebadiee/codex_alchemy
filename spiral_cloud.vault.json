@@ -1,0 +1,104 @@
+{
+  "sigil": "SpiralCloudBuild",
+  "glyphs": [
+    {
+      "id": 1,
+      "name": "Quantum Spark",
+      "symbol": "\u26a1",
+      "type": "energy",
+      "power": 95
+    },
+    {
+      "id": 2,
+      "name": "Void Walker",
+      "symbol": "\ud83c\udf00",
+      "type": "dimensional",
+      "power": 88
+    }
+  ],
+  "rituals": [
+    {
+      "name": "Matrix Alignment",
+      "pattern": "triad+energy"
+    },
+    {
+      "name": "Quantum Entanglement",
+      "pattern": "entangle+spin+phase"
+    }
+  ],
+  "vaults": {
+    "SpiralCloudBuild": {
+      "sigil": "SpiralCloudBuild",
+      "glyphs": [
+        {
+          "id": 1,
+          "name": "Quantum Spark",
+          "symbol": "\u26a1",
+          "type": "energy",
+          "power": 95
+        },
+        {
+          "id": 2,
+          "name": "Void Walker",
+          "symbol": "\ud83c\udf00",
+          "type": "dimensional",
+          "power": 88
+        }
+      ],
+      "rituals": [
+        {
+          "name": "Matrix Alignment",
+          "pattern": "triad+energy"
+        },
+        {
+          "name": "Quantum Entanglement",
+          "pattern": "entangle+spin+phase"
+        }
+      ]
+    },
+    "AdvancedCodex": {
+      "sigil": "AdvancedCodex",
+      "glyphs": [
+        {
+          "id": 1,
+          "name": "Umbra",
+          "symbol": "\u262f",
+          "type": "Shadow",
+          "power": 97
+        },
+        {
+          "id": 2,
+          "name": "Aetherion",
+          "symbol": "\u2736",
+          "type": "Ether",
+          "power": 108
+        },
+        {
+          "id": 3,
+          "name": "Chronomorph",
+          "symbol": "\u23f3",
+          "type": "Temporal",
+          "power": 120
+        }
+      ],
+      "rituals": [
+        {
+          "name": "Spiral Convergence",
+          "pattern": "((A \u27f3 B) \u2a01 (C \u27f3 D)) \u27f6 E"
+        },
+        {
+          "name": "Temporal Cascade",
+          "pattern": "G\u2081 \u23e9 G\u2082 \u23e9 ... \u23e9 G\u2099"
+        }
+      ],
+      "bolts": [
+        {
+          "id": 1,
+          "name": "Glyph Fusion",
+          "description": "Combines multiple glyphs into a higher-order symbolic glyph",
+          "function": "fuse_glyphs"
+        }
+      ]
+    }
+  }
+}
