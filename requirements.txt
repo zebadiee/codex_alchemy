@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+click
+rich
+sqlalchemy
+aiosqlite 
