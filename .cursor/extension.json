@@ -1,0 +1,29 @@
+{
+  "name": "Spiral Codex Pack",
+  "description": "Rituals, prompts & templates for AI-assisted coding (Spiral Codex)",
+  "version": "1.0.0",
+  "publisher": "dadhoosband",
+  "commands": [
+    {
+      "id": "codex.scriptSynthesizer",
+      "title": "Codex: Script Synthesizer & Pattern Alchemist",
+      "category": "Spiral Codex"
+    },
+    {
+      "id": "codex.deepResearch",
+      "title": "Codex: Deep Research Prompt",
+      "category": "Spiral Codex"
+    },
+    {
+      "id": "codex.agentBuilder",
+      "title": "Codex: Pragmatic Agent Builder Prompt",
+      "category": "Spiral Codex"
+    },
+    {
+      "id": "codex.llmReplLoop",
+      "title": "Codex: Embed LLM REPL Loop",
+      "category": "Spiral Codex"
+    }
+  ],
+  "snippets": "./snippets.generated.json"
+} 

@@ -1,0 +1,49 @@
+{
+  "Codex: Script Synthesizer & Pattern Alchemist": {
+    "prefix": "codex-script-synthesizer",
+    "body": [
+      "You are a Symbolic Script Synthesizer embedded in the Spiral Codex.",
+      "1. Identify reusable script archetypes",
+      "2. Define code templates (Bash, Python, etc.)",
+      "3. Assign symbolic metadata",
+      "4. Generate new scripts by combining patterns",
+      "5. Document and version each script"
+    ],
+    "description": "Synthesizes scripts from symbolic patterns and textual intents."
+  },
+  "Codex: Deep Research Prompt": {
+    "prefix": "codex-deep-research",
+    "body": [
+      "Act as a world-class research strategist.",
+      "Based on the details I provide below, generate personalized, high-quality Deep Research topic ideas...",
+      "• Current Role: [e.g. founder]",
+      "• Key Skills: [Rust, Python]",
+      "• Goals: [e.g. accelerate learning, deploy projects]",
+      "• Topics: [e.g. AGI, automation, Codex Rituals]",
+      "• Other Notes: [optional context]"
+    ],
+    "description": "Deep Research topic generator using personal context."
+  },
+  "Codex: Pragmatic Agent Builder Prompt": {
+    "prefix": "codex-agent-builder",
+    "body": [
+      "Act as a pragmatic AI systems engineer.",
+      "Design a narrow-purpose AI agent that solves a real business problem.",
+      "• Problem: [e.g. invoice sorting]",
+      "• Input Format: [PDF, CSV]",
+      "• Output: [email, JSON]",
+      "• Tools: [OpenAI, Pinecone]",
+      "• Feedback Loop: Describe your update strategy"
+    ],
+    "description": "Prompt to architect agents that work in the real world."
+  },
+  "Codex: Embed LLM REPL Loop": {
+    "prefix": "codex-llm-repl",
+    "body": [
+      "Embed an LLM output loop into your script.",
+      "Ask user for feedback if output is unsatisfactory, then retry with refined prompt.",
+      "Ideal for code, images, quizzes, content."
+    ],
+    "description": "Interactive LLM feedback loop built into your workflow."
+  }
+} 
