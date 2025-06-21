@@ -1,0 +1,16 @@
+{
+  "refined_papers": [
+    {
+      "title": "Advanced AI Hallucination Detection Methods",
+      "refined_summary": "\ud83d\udd2e [Codex-20250622-002145]\nThis paper presents novel approaches to detect AI hallucination in large language models. The methods achieve 95% accuracy on benchmark datasets from 2023. Performance analysis shows significant improvements over existing techniques.\n\n# \ud83d\udd0d Codex Note: Validate against benchmark X / real dataset Y\n# \ud83d\udcc5 Codex Note: Check for more recent developments\n# \u26a1 Codex Note: Consider computational efficiency trade-offs",
+      "refined_at": "2025-06-22T00:21:45.290090",
+      "sigil": "\ud83d\udd2e [Codex-20250622-002145]"
+    },
+    {
+      "title": "Neural Network Optimization Techniques",
+      "refined_summary": "\ud83d\udd2e [Codex-20250622-002145]\nWe explore various optimization strategies for deep neural networks, focusing on computational efficiency and accuracy trade-offs. The research builds upon 2024 developments in transformer architectures.\n# \ud83d\udcc5 Codex Note: Check for more recent developments\n# \u26a1 Codex Note: Consider computational efficiency trade-offs",
+      "refined_at": "2025-06-22T00:21:45.290098",
+      "sigil": "\ud83d\udd2e [Codex-20250622-002145]"
+    }
+  ]
+}

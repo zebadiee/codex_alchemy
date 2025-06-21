@@ -1,6 +1,7 @@
 import asyncio
 from backend.db import async_engine, async_session_maker
-from backend.models import Base, Ritual
+from backend.models import Base, Ritual, Glyph
+from sqlalchemy import text
 
 rituals_to_seed = [
     {"name": "Script Synthesizer", "description": "Synthesizes code from text patterns"},
@@ -14,8 +15,24 @@ async def seed():
         await conn.run_sync(Base.metadata.create_all)
 
     async with async_session_maker() as session:
-        for ritual in rituals_to_seed:
-            session.add(Ritual(**ritual))
+        # Clear existing data
+        await session.execute(text("DELETE FROM glyphs"))
+        await session.execute(text("DELETE FROM rituals"))
+        await session.commit()
+
+        # Add rituals
+        ritual1 = Ritual(name="Morning Ritual", description="Start your day with intention.")
+        ritual2 = Ritual(name="Evening Ritual", description="Reflect and unwind.")
+        session.add_all([ritual1, ritual2])
+        await session.flush()
+
+        # Add glyphs
+        glyphs = [
+            Glyph(symbol="☀️", ritual_id=ritual1.id),
+            Glyph(symbol="🌙", ritual_id=ritual2.id),
+            Glyph(symbol="🔥", ritual_id=ritual1.id),
+        ]
+        session.add_all(glyphs)
         await session.commit()
     print("🌱 Rituals seeded successfully.")
 

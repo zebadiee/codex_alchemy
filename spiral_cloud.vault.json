@@ -4,14 +4,14 @@
     {
       "id": 1,
       "name": "Quantum Spark",
-      "symbol": "\u26a1",
+      "symbol": "⚡",
       "type": "energy",
       "power": 95
     },
     {
       "id": 2,
       "name": "Void Walker",
-      "symbol": "\ud83c\udf00",
+      "symbol": "🌀",
       "type": "dimensional",
       "power": 88
     }
@@ -33,14 +33,14 @@
         {
           "id": 1,
           "name": "Quantum Spark",
-          "symbol": "\u26a1",
+          "symbol": "⚡",
           "type": "energy",
           "power": 95
         },
         {
           "id": 2,
           "name": "Void Walker",
-          "symbol": "\ud83c\udf00",
+          "symbol": "🌀",
           "type": "dimensional",
           "power": 88
         }
@@ -62,21 +62,21 @@
         {
           "id": 1,
           "name": "Umbra",
-          "symbol": "\u262f",
+          "symbol": "☯",
           "type": "Shadow",
           "power": 97
         },
         {
           "id": 2,
           "name": "Aetherion",
-          "symbol": "\u2736",
+          "symbol": "✶",
           "type": "Ether",
           "power": 108
         },
         {
           "id": 3,
           "name": "Chronomorph",
-          "symbol": "\u23f3",
+          "symbol": "⏳",
           "type": "Temporal",
           "power": 120
         }
@@ -84,11 +84,11 @@
       "rituals": [
         {
           "name": "Spiral Convergence",
-          "pattern": "((A \u27f3 B) \u2a01 (C \u27f3 D)) \u27f6 E"
+          "pattern": "((A ⟳ B) ⨁ (C ⟳ D)) ⟶ E"
         },
         {
           "name": "Temporal Cascade",
-          "pattern": "G\u2081 \u23e9 G\u2082 \u23e9 ... \u23e9 G\u2099"
+          "pattern": "G₁ ⏩ G₂ ⏩ ... ⏩ Gₙ"
         }
       ],
       "bolts": [
@@ -99,6 +99,212 @@
           "function": "fuse_glyphs"
         }
       ]
-    }
+    },
+    "HyperSeed": [
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888566.136592,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888566.136592,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888566.1365929,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      }
+    ],
+    "AutoSigil_1749888452": [
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281312,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281313,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281313,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      }
+    ],
+    "AutoSigil_1749888554": [
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888554.8463109,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888554.8463109,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888554.846312,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      }
+    ],
+    "ReflectiveMirror": [
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888566.136592,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888566.136592,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888566.1365929,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      },
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281312,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281313,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888452.281313,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      },
+      {
+        "name": "Glyph_A",
+        "vector": [
+          0.1,
+          0.2,
+          0.3
+        ],
+        "metadata": {},
+        "created_at": 1749888554.8463109,
+        "hash": "e9566f1d21deef5f1aa250d188ce322e"
+      },
+      {
+        "name": "Glyph_B",
+        "vector": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "metadata": {},
+        "created_at": 1749888554.8463109,
+        "hash": "3395c3cae4db2c1751cd96ab8b4dde16"
+      },
+      {
+        "name": "Glyph_C",
+        "vector": [
+          0.7,
+          0.8,
+          0.9
+        ],
+        "metadata": {},
+        "created_at": 1749888554.846312,
+        "hash": "448b7ee972c9e5f17f586b8af0f91af5"
+      }
+    ]
   }
 }

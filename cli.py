@@ -1,88 +1,52 @@
-# cli.py
+# codex_alchemy/cli.py
 
 import click
-from utils import catch_alchemy_errors, AlchemyError
-from vault import bundle, ingest, _load_state
-from glyphs import quote_all
-from rituals import list_rituals, ritual
-from share import share_backend
-from assistant import assistant
+from codex_alchemy.vault import list_sigils, reflect_all, restore, preserve
+from codex_alchemy.rituals.evolve import evolve_glyphs
+from codex_alchemy.debugger import debug  # 🔧 This is the debug command function
 
 @click.group()
 def cli():
     """Codex Alchemy CLI"""
     pass
 
-# ---------- Vault Commands ----------
+# 🔁 Attach debug command AFTER cli() is defined
+cli.add_command(debug, name="debug")
+
 @cli.group()
 def vault():
-    """Vault commands"""
+    """Vault sigil operations"""
     pass
 
-@vault.command("bundle")
-@click.argument("sigil")
-def bundle_vault(sigil):
-    click.echo(f"🔒 Bundling vault '{sigil}'...")
-    bundle(sigil)
+@vault.command()
+def list():
+    """List all sigils"""
+    list_sigils()
 
-@vault.command("ingest")
-@click.argument("file", type=click.Path(exists=True))
-def ingest_vault(file):
-    click.echo(f"📥 Ingesting vault from {file}...")
-    ingest(file)
+@vault.command()
+@click.argument('reflection_sigil')
+def reflect(reflection_sigil):
+    """Reflect vault into new sigil"""
+    reflect_all(reflection_sigil)
 
-@vault.command("list")
-def list_vaults():
-    state = _load_state()
-    vaults = state.get("vaults", {})
-    if not vaults:
-        click.secho("📭 No vaults found.", fg="yellow")
-    else:
-        click.secho("🏴 Vaults Available:", fg="cyan")
-        for sigil, v in vaults.items():
-            glyph_count = len(v.get("glyphs", []))
-            ritual_count = len(v.get("rituals", []))
-            click.echo(f"• {sigil}: {glyph_count} glyphs, {ritual_count} rituals")
+@vault.command()
+@click.argument('sigil')
+def restore_cmd(sigil):
+    """Restore sigil glyphs"""
+    restore(sigil)
 
-# ---------- Glyph Commands ----------
-@cli.group()
-def glyph():
-    """Glyph commands"""
-    pass
+@vault.command()
+@click.argument('sigil')
+@click.argument('output_path')
+def preserve_cmd(sigil, output_path):
+    """Preserve sigil to path"""
+    glyphs = restore(sigil)
+    preserve(output_path, glyphs)
 
-@glyph.command("quote")
-@click.argument("scope", default="all")
-@click.option("--format", default="table")
-def quote_glyphs(scope, format):
-    quote_all(scope=scope, format=format)
-
-# ---------- Ritual Commands ----------
-@cli.group()
-def ritual():
-    """Ritual commands"""
-    pass
-
-@ritual.command("list")
-def list_rituals_command():
-    list_rituals()
-
-@ritual.command("run")
-def run_ritual():
-    ritual()
-
-# ---------- Share Commands ----------
-@cli.group()
-def share():
-    """Share Codex services"""
-    pass
-
-@share.command("backend")
-def expose_backend():
-    share_backend()
-
-# ---------- Assistant Commands ----------
-cli.add_command(assistant, name="assist")
-
-from assistant import assistant
-cli.add_command(assistant, name="assist")
+@vault.command("evolve")
+@click.argument("input_sigil")
+@click.argument("output_sigil")
+def evolve_cmd(input_sigil, output_sigil):
+    """Evolve glyphs from one sigil to another."""
+    evolve_glyphs(input_sigil, output_sigil)
 

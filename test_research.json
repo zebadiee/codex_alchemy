@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "title": "Advanced AI Hallucination Detection Methods",
+      "summary": "This paper presents novel approaches to detect AI hallucination in large language models. The methods achieve 95% accuracy on benchmark datasets from 2023. Performance analysis shows significant improvements over existing techniques."
+    },
+    {
+      "title": "Neural Network Optimization Techniques",
+      "summary": "We explore various optimization strategies for deep neural networks, focusing on computational efficiency and accuracy trade-offs. The research builds upon 2024 developments in transformer architectures."
+    }
+  ]
+} 

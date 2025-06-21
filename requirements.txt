@@ -3,4 +3,7 @@ uvicorn
 click
 rich
 sqlalchemy
-aiosqlite 
+aiosqlite
+pytest
+pytest-asyncio
+httpx 

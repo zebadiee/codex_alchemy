@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
-from cli import cli
-if __name__ == "__main__":
+
+# main.py — CLI entrypoint
+from codex_alchemy.cli import cli
+
+def main():
     cli()
+
+if __name__ == "__main__":
+    main()
+
