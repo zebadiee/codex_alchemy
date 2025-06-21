@@ -1,10 +1,17 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+from sqlalchemy.orm import declarative_base
 
-DATABASE_URL = "sqlite:///./spiral_codex.db"
+DATABASE_URL = "sqlite+aiosqlite:///./spiral_codex.db"
 
-engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
+async_engine = create_async_engine(
+    DATABASE_URL, echo=True
 )
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base() 
+async_session_maker = async_sessionmaker(
+    bind=async_engine, expire_on_commit=False, class_=AsyncSession
+)
+Base = declarative_base()
+
+# Dependency for FastAPI
+async def get_session():
+    async with async_session_maker() as session:
+        yield session 
