@@ -1,0 +1,83 @@
+{
+  "models": [
+    {
+      "title": "DeepSeek R1 (Free Reasoning)",
+      "model": "deepseek/deepseek-r1:free",
+      "apiBase": "https://openrouter.ai/api/v1",
+      "apiKey": "REPLACE_WITH_YOUR_OPENROUTER_KEY"
+    },
+    {
+      "title": "Gemini 2.5 Flash (Free)",
+      "model": "google/gemini-2.5-flash:free",
+      "apiBase": "https://openrouter.ai/api/v1",
+      "apiKey": "REPLACE_WITH_YOUR_OPENROUTER_KEY"
+    },
+    {
+      "title": "Local Qwen 2.5 Coder 3B",
+      "model": "qwen2.5-coder:3b",
+      "apiBase": "http://localhost:11434/v1",
+      "apiKey": "ollama"
+    },
+    {
+      "title": "Local DeepSeek R1 8B (Reasoning)",
+      "model": "deepseek-r1",
+      "apiBase": "http://localhost:11434/v1",
+      "apiKey": "ollama"
+    }
+  ],
+  "autocomplete": {
+    "model": "qwen2.5-coder:3b",
+    "apiBase": "http://localhost:11434/v1",
+    "apiKey": "ollama",
+    "options": {
+      "temperature": 0.1,
+      "maxTokens": 256,
+      "stopTokens": ["\n\n"]
+    }
+  },
+  "embeddingsProvider": {
+    "provider": "ollama",
+    "model": "nomic-embed-text"
+  },
+  "contextProviders": [
+    {
+      "name": "codebase",
+      "params": {
+        "maxChars": 100000,
+        "useGitIgnore": true
+      }
+    },
+    {
+      "name": "docs",
+      "params": {
+        "sites": [
+          "https://docs.continue.dev",
+          "https://openrouter.ai/docs"
+        ]
+      }
+    },
+    {
+      "name": "terminal",
+      "params": {
+        "maxLines": 100
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "python-quality",
+      "pattern": "*.py",
+      "systemMessage": "Focus on clean, Pythonic code. Avoid unnecessary complexity."
+    },
+    {
+      "name": "security-first",
+      "pattern": "*",
+      "systemMessage": "Prioritize security best practices in all suggestions."
+    }
+  ],
+  "experimental": {
+    "modelCaching": true,
+    "smartUnloading": true,
+    "maxConcurrentModels": 2
+  }
+}
