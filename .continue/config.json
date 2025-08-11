@@ -1,80 +1,120 @@
 {
+  // --- Existing Model Configuration ---
+  "$schema": "https://raw.githubusercontent.com/continuedev/continue/main/config.schema.json",
+
   "models": [
     {
-      "title": "DeepSeek R1 (Free Reasoning)",
-      "model": "deepseek/deepseek-r1:free",
+      "title": "Gemini 1.5 Pro (Google)",
+      "provider": "google",
+      "model": "gemini-1.5-pro",
+      "apiKey": "${GEMINI_API_KEY}", // https://makersuite.google.com/app/apikey
+      "maxContextTokens": 32768
+    },
+    {
+      "title": "OpenRouter GPT-4.1",
+      "provider": "openai",
       "apiBase": "https://openrouter.ai/api/v1",
-      "apiKey": "REPLACE_WITH_YOUR_OPENROUTER_KEY"
+      "apiKey": "${OPENROUTER_API_KEY}", // https://openrouter.ai/sign-up
+      "model": "openai/gpt-4.1",
+      "maxContextTokens": 8192
     },
     {
-      "title": "Gemini 2.5 Flash (Free)",
-      "model": "google/gemini-2.5-flash:free",
-      "apiBase": "https://openrouter.ai/api/v1",
-      "apiKey": "REPLACE_WITH_YOUR_OPENROUTER_KEY"
+      "title": "Local Tabby (Qwen 2.5 3B)",
+      "provider": "openai",
+      "apiBase": "http://localhost:8080/v1",
+      "apiKey": "not-needed",
+      "model": "qwen2.5-3b-instruct",
+      "maxContextTokens": 4096
     },
     {
-      "title": "Local Qwen 2.5 Coder 3B",
-      "model": "qwen2.5-coder:3b",
-      "apiBase": "http://localhost:11434/v1",
-      "apiKey": "ollama"
+      "title": "Windsurf Cloud",
+      "provider": "openai",
+      "apiBase": "https://windsurf.ai/api",
+      "apiKey": "${WINDSURF_API_KEY}", // https://windsurf.ai
+      "model": "windsurf/latest",
+      "maxContextTokens": 8192
     },
     {
-      "title": "Local DeepSeek R1 8B (Reasoning)",
-      "model": "deepseek-r1",
-      "apiBase": "http://localhost:11434/v1",
-      "apiKey": "ollama"
+      "title": "Fallback Free API Slot",
+      "provider": "openai",
+      "apiBase": "https://api.YOUR-FREE-OPENAI-COMPATIBLE.com/v1",
+      "apiKey": "${FREE_API_KEY}",
+      "model": "gpt-3.5-turbo",
+      "maxContextTokens": 4096
     }
   ],
+
+  "defaultModel": "Local Tabby (Qwen 2.5 3B)",
+  "fallbackModels": [
+    "OpenRouter GPT-4.1",
+    "Gemini 1.5 Pro (Google)",
+    "Windsurf Cloud",
+    "Fallback Free API Slot"
+  ],
+
   "autocomplete": {
-    "model": "qwen2.5-coder:3b",
-    "apiBase": "http://localhost:11434/v1",
-    "apiKey": "ollama",
-    "options": {
-      "temperature": 0.1,
-      "maxTokens": 256,
-      "stopTokens": ["\n\n"]
-    }
+    "enabled": true,
+    "model": "Local Tabby (Qwen 2.5 3B)",
+    "debounceDelay": 100,
+    "maxCompletions": 5
   },
-  "embeddingsProvider": {
-    "provider": "ollama",
-    "model": "nomic-embed-text"
-  },
+
+  "chat": { "defaultModel": "Gemini 1.5 Pro (Google)" },
+  "inlineChat": { "defaultModel": "OpenRouter GPT-4.1" },
+
+  // --- Enhanced Sections Below ---
+
   "contextProviders": [
     {
       "name": "codebase",
+      "type": "filesystem",
       "params": {
-        "maxChars": 100000,
+        "root": ".",
+        "exclude": ["node_modules", ".git", "dist", "build", "*.log"],
+        "maxChars": 200000,
         "useGitIgnore": true
       }
     },
     {
-      "name": "docs",
+      "name": "documentation",
+      "type": "web",
       "params": {
         "sites": [
           "https://docs.continue.dev",
-          "https://openrouter.ai/docs"
-        ]
+          "https://docs.python.org/3/",
+          "https://openrouter.ai/docs",
+          "https://ollama.ai/library"
+        ],
+        "maxDocs": 3
       }
     },
     {
       "name": "terminal",
+      "type": "terminal",
       "params": {
-        "maxLines": 100
+        "captureLastNLines": 200
       }
     }
   ],
+
   "rules": [
     {
       "name": "python-quality",
       "pattern": "*.py",
-      "systemMessage": "Focus on clean, Pythonic code. Avoid unnecessary complexity."
+      "systemMessage": "Prioritize clear, idiomatic Python. Follow PEP8. Avoid unnecessary abstractions."
     },
     {
-      "name": "security-first",
+      "name": "typescript-security",
+      "pattern": "*.ts",
+      "systemMessage": "Favor type-safe, secure code. Never use 'any' types. Explicitly handle errors."
+    },
+    {
+      "name": "general-security",
       "pattern": "*",
-      "systemMessage": "Prioritize security best practices in all suggestions."
+      "systemMessage": "For all languages, follow security best practices, validate inputs, and avoid hard-coding secrets."
     }
   ],
+
   "experimental": {
     "modelCaching": true,
     "smartUnloading": true,
